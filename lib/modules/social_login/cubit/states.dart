@@ -17,3 +17,5 @@ class SocialLoginErrorState extends SocialLoginStates {
 }
 
 class SocialChangePasswordVisibilityState extends SocialLoginStates {}
+
+class SocialsingOutSuccessState extends SocialLoginStates {}

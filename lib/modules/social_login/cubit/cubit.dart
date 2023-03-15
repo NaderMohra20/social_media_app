@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:social_media_app/modules/social_login/cubit/states.dart';
 
+import '../../../shared/components/components.dart';
+
 class SocialLoginCubit extends Cubit<SocialLoginStates> {
   SocialLoginCubit() : super(SocialLoginInitialState());
 

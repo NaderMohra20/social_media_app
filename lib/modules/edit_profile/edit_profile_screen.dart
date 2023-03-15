@@ -8,7 +8,6 @@ import 'package:social_media_app/shared/components/components.dart';
 import '../../layout/cubit/cubit.dart';
 import '../../layout/cubit/states.dart';
 import '../../shared/styles/icon_broken.dart';
-import '../../shared/styles/icon_broken.dart';
 
 class EditProfileScreen extends StatelessWidget {
   var nameController = TextEditingController();

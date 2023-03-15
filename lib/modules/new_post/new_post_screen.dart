@@ -6,6 +6,7 @@ import '../../layout/cubit/cubit.dart';
 import '../../layout/cubit/states.dart';
 import '../../shared/components/components.dart';
 import '../../shared/styles/icon_broken.dart';
+import '../feeds/feeds_screen.dart';
 
 class NewPostScreen extends StatelessWidget {
   var textController = TextEditingController();
@@ -37,6 +38,7 @@ class NewPostScreen extends StatelessWidget {
                       text: textController.text,
                     );
                   }
+                  navigateAndFinish(context, FeedsScreen());
                 }),
                 child: Text(
                   'Post'.toUpperCase(),
@@ -55,20 +57,20 @@ class NewPostScreen extends StatelessWidget {
                     height: 10.0,
                   ),
                 Row(
-                  children: const [
+                  children: [
                     CircleAvatar(
                       radius: 25.0,
                       backgroundImage: CachedNetworkImageProvider(
-                        'https://image.freepik.com/free-photo/skeptical-woman-has-unsure-questioned-expression-points-fingers-sideways_273609-40770.jpg',
+                        SocialCubit.get(context).userModel!.image!,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 15.0,
                     ),
                     Expanded(
                       child: Text(
-                        'Abdullah Mansour',
-                        style: TextStyle(
+                        SocialCubit.get(context).userModel!.name!,
+                        style: const TextStyle(
                           height: 1.4,
                         ),
                       ),

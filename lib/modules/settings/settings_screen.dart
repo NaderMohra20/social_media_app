@@ -5,7 +5,9 @@ import 'package:social_media_app/shared/components/components.dart';
 
 import '../../layout/cubit/cubit.dart';
 import '../../layout/cubit/states.dart';
+import '../../shared/network/local/cache_helper.dart';
 import '../../shared/styles/icon_broken.dart';
+import '../social_login/social_login_screen.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -171,6 +173,28 @@ class SettingsScreen extends StatelessWidget {
                     child: const Icon(
                       IconBroken.Edit,
                       size: 16.0,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: OutlinedButton(
+                      onPressed: () {
+                        SocialCubit.get(context).signUot();
+
+                        navigateAndFinish(
+                          context,
+                          SocialLoginScreen(),
+                        );
+                      },
+                      child: const Text(
+                        'log out',
+                      ),
                     ),
                   ),
                 ],
